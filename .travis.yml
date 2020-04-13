@@ -45,10 +45,8 @@ install:
   - npm install
 script:
   - chmod +x mvnw
-  - './mvnw -ntp checkstyle:check'
-  - './mvnw -ntp clean  '
-  - "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm -Dfrontend.npm.arguments='run
-    test' -Dmaven.repo.local=$MAVEN_USER_HOME"
+  - './mvnw  clean  test'
+  - npm test -- -u
   - './mvnw package -Pdev -Dmaven.test.skip=true jib:dockerBuild'
 notifications:
   webhooks:
