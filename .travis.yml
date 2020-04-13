@@ -48,7 +48,7 @@ script:
   - './mvnw -ntp clean verify'
   - "./mvnw -ntp com.github.eirslett:frontend-maven-plugin:npm -Dfrontend.npm.arguments='run
     test' -Dmaven.repo.local=$MAVEN_USER_HOME"
-  - 'mvnw package -Pdev -Dmaven.test.skip=true jib:dockerBuild'
+  - './mvnw package -Pdev -Dmaven.test.skip=true jib:dockerBuild'
 notifications:
   webhooks:
     on_success: change
