@@ -45,8 +45,6 @@ install:
   - npm install
 script:
   - chmod +x mvnw
-  - './mvnw  clean  test'
-  - npm test -- -u
   - './mvnw package -Pdev -Dmaven.test.skip=true jib:dockerBuild'
 notifications:
   webhooks:
